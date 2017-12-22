@@ -8,9 +8,16 @@ module Api
       end
 
       def show
+        @transaction = Realestatetransaction.where(id: params[:id]).first
+        if @transaction.present?
+          render json: @transaction, status: :ok
+        else
+          render json: {error: "404 Not Found"}, status: :not_found
+        end
       end
 
       def edit
+        @transaction = Realestatetransaction.where(id: params[:id])
       end
 
       def new
@@ -20,18 +27,32 @@ module Api
       end
 
       def update
+        @transaction = Realestatetransaction.where(id: params[:id]).first
+        if @transaction.update_attributes(transaction_params)
+          render json: @transaction, status: :ok
+        else
+          render json: {error: "Updating Faild!"}, status: :unprocessable_entity
+        end
       end
 
       def delete
       end
+
       private
         def set_limit
-          @limit = params[:limit] || 10
+          p = params.permit(:limit)
+          @limit = p[:limit] || 10
         end
 
         def set_page
-          @page = params[:page] || 1
+          p = params.permit(:page)
+          @page = p[:page] || 1
         end
+
+        def transaction_params
+          params.permit(:city)
+        end
+        
     end
   end
 end
