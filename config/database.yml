@@ -7,8 +7,8 @@ development: &development
   <<: *default
   database: realestate
   hostname: localhost
-  username: username
-  password: password
+  username: hs
+  password: root
 
 test:
   <<: *development

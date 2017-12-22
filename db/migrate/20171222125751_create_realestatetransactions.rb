@@ -5,14 +5,14 @@ class CreateRealestatetransactions < ActiveRecord::Migration[5.1]
       t.string :city
       t.string :zip
       t.string :state
-      t.number :beds
-      t.number :baths
-      t.number :sq_ft
-      t.string :type
+      t.integer :beds
+      t.integer :baths
+      t.integer :sq_ft
+      t.string :category
       t.date :sale_date
-      t.number :price
-      t.number :latitude
-      t.number :longtude
+      t.float :price
+      t.float :latitude
+      t.float :longtude
 
       t.timestamps
     end
