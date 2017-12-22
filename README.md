@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## RAILS VERSION = 5.1.4
+## RUBY VERSION = 2.4.0
 
-Things you may want to cover:
+## Getting the project up and running
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. run `bundle install`
+2. run `rake db:migrate`
+3. run `rake db:seed`
+4. run `rails s`
