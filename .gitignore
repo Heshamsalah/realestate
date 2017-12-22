@@ -11,8 +11,6 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
-config/database.yml
-
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -23,3 +21,4 @@ config/database.yml
 /yarn-error.log
 
 .byebug_history
+database.yml
