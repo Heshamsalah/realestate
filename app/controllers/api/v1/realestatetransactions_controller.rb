@@ -49,7 +49,6 @@ module Api
       end
 
       def search
-        # byebug
         @transactions = Realestatetransaction.search(search_params, @limit, @page)
         if @transactions.present?
           render json: @transactions, status: :ok
@@ -70,7 +69,8 @@ module Api
         end
 
         def transaction_params
-          params.require(:transaction).permit(:street, :city, :beds, :baths, :price, :longtude, :latitude, :state)
+          params.require(:transaction)
+          .permit(:street, :city, :beds, :baths, :price, :longtude, :latitude, :state, :sq_ft, :zip, :sale_date)
         end
 
         def search_params
